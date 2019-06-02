@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.xsis.web128.dao.JadwalDao;
-import com.xsis.web128.entity.DataTrader;
+
 import com.xsis.web128.entity.Dokter;
 import com.xsis.web128.entity.JadwalPraktek;
-import com.xsis.web128.entity.Transaksi;
+
 
 @Service
 @Transactional
@@ -44,12 +44,7 @@ public class JadwalService {
 		jadwalDao.delete(jadwalPraktek);
 	}
 
-	public List<Transaksi> findByID(String traderId) {
-		// TODO Auto-generated method stub
-		return jadwalDao.findByIDTrader(traderId);
-		
-	}
-
+	
 	
 
 }

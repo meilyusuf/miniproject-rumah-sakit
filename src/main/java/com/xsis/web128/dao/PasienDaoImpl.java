@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.mysql.fabric.xmlrpc.base.Data;
-import com.xsis.web128.entity.DataTrader;
 import com.xsis.web128.entity.Pasien;
 
 @Component
@@ -67,32 +66,9 @@ public class PasienDaoImpl implements PasienDao {
 		
 	}
 
-	public void save1(DataTrader trader) {
-		Session session = sessionFactory.getCurrentSession();
-		session.save(trader);
-		session.flush();
-	}
+	
 
-	public List<DataTrader> getAllTrader() {
-		Session session = sessionFactory.getCurrentSession();
-		String hql = "from DataTrader";
-		List<DataTrader> listTrader = session.createQuery(hql).list();
-		if (listTrader.isEmpty()) {
-			return null;
-		}
-		return listTrader;
-	}
-
-	public DataTrader getTraderByID(String traderId) {
-		// TODO Auto-generated method stub
-		Session session = sessionFactory.getCurrentSession();
-		String hql = "select balance from DataTrader where = :traderId";
-		List DataTrader = session.createQuery(hql).setParameter("traderId", traderId).list();
-		if (DataTrader.isEmpty()) {
-			return null;
-		}
-		return (DataTrader) DataTrader.get(0);
-	}
+	
 
 	
 

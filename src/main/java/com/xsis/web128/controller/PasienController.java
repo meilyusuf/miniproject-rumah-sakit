@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.xsis.web128.entity.DataTrader;
+
 import com.xsis.web128.entity.Pasien;
 import com.xsis.web128.service.PasienService;
 
@@ -28,8 +28,8 @@ public class PasienController {
 	//save
 	@RequestMapping(value="/save", method=RequestMethod.POST)
 	@ResponseStatus(HttpStatus.OK)
-	public void pasien(@RequestBody DataTrader trader) {
-		pasienService.save1(trader);
+	public void pasien(@RequestBody Pasien pasien) {
+		pasienService.save(pasien);
 	}
 	
 	//delete
@@ -61,7 +61,7 @@ public class PasienController {
 	//tampil data
 		@RequestMapping
 		public String index(Model model) {
-			List<DataTrader> listTrader = pasienService.getAllTrader();
+			List<Pasien> listTrader = pasienService.getAllPasien();
 			model.addAttribute("listTrader", listTrader);
 			return "pasien";
 		}

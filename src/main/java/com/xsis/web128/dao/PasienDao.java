@@ -2,7 +2,6 @@ package com.xsis.web128.dao;
 
 import java.util.List;
 
-import com.xsis.web128.entity.DataTrader;
 import com.xsis.web128.entity.Pasien;
 
 
@@ -15,7 +14,7 @@ public interface PasienDao {
 	//tampil data
 	public List<Pasien> getAllPasien();
 	
-	public List<DataTrader> getAllTrader();
+	
 	//delete
 	public void delete(Pasien pasien);
 	//tampil data by id
@@ -24,8 +23,7 @@ public interface PasienDao {
 	public void update(Pasien pasien);
 	public Pasien getPasienByKode(String kodePasien);
 	
-	public void save1(DataTrader trader);
-	public DataTrader getTraderByID(String traderId);
+	
 
 	
 	

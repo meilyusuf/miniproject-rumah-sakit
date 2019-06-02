@@ -7,7 +7,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import com.xsis.web128.dao.PasienDao;
 import com.xsis.web128.dao.RegistrasiDao;
-import com.xsis.web128.entity.DataTrader;
 import com.xsis.web128.entity.Pasien;
 import com.xsis.web128.entity.Registrasi;
 
@@ -20,17 +19,12 @@ public class PasienService {
 	@Autowired
 	RegistrasiDao registrasiDao;
 	
-	public List<DataTrader> getAllTrader() {
-		return pasienDao.getAllTrader();
-	}
+
 	
 	public void save(Pasien pasien) {
 		pasienDao.save(pasien);
 	}
 	
-	public void save1(DataTrader trader) {
-		pasienDao.save1(trader);
-	}
 	
 	
 
@@ -66,10 +60,7 @@ public class PasienService {
 		return pasienDao.getPasienByKode(kodePasien);
 	}
 
-	public DataTrader getTraderById(String traderId) {
-		// TODO Auto-generated method stub
-		return pasienDao.getTraderByID(traderId);
-	}
+	
 
 	
 }

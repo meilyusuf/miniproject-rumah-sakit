@@ -16,11 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.xsis.web128.entity.DataTrader;
+
 import com.xsis.web128.entity.Dokter;
 import com.xsis.web128.entity.JadwalPraktek;
 import com.xsis.web128.entity.Pasien;
-import com.xsis.web128.entity.Transaksi;
+
 import com.xsis.web128.service.JadwalService;
 import com.xsis.web128.service.PasienService;
 import com.xsis.web128.service.DokterService;
