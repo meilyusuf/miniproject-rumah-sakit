@@ -1,0 +1,29 @@
+body {
+	/*background-color: red;*/
+	
+}
+
+h1 {
+	margin-bottom: 50px;
+}
+
+form {
+	margin-bottom: 30px;
+	margin-top: 30px;
+}
+
+h2 {
+	margin-bottom: 30px;
+}
+
+h3 {
+	margin: 10px;
+}
+
+footer {
+	margin-top: 75px;
+}
+
+.content-box {
+	background-color: #021533;
+}

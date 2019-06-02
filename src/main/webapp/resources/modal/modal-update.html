@@ -1,0 +1,31 @@
+<!-- modal for update employee -->
+<div class="modal fade" id="modal-data-edit" tabindex="-1" role="dialog"
+	aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Pilih ID
+					registrasi</h5>
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="form-group">
+					<label for="input-pembeli">ID Registrasi</label> <select
+						class="form-control" id="input-Regist" name="input-pembeli">
+						<c:forEach items="${listRegist}" var="regist">
+							<option value="${regist.id}">${regist.pasien.name}</option>
+						</c:forEach>
+					</select>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" id="btn-change" class="btn btn-primary">Save
+					changes</button>
+			</div>
+		</div>
+	</div>
+</div>
