@@ -1,43 +1,25 @@
 $(document).ready(function(){
 	
 	$('#submitPasien').on('click', function(){
-		//validasi
-		var valname = $('#inputName1').val();
-		var valumur = $('#inputUmur1').val();
-		var valalamat = $('#inputAlamat1').val();
-		var valemail = $('#inputEmail1').val();
-		if(valname==""){
-			alert('mohon masukkan Nama Pasien')
-			return false;
-		}
-		if(valumur==""){
-			alert('mohon masukkan Umur pasien')
-			return false;
-		}
-		if(valalamat==""){
-			alert('mohon masukkan Alamat Pasien')
-			return false;
-		}
-		if(valemail==""){
-			alert('mohon masukkan Email Pasien')
-			return false;
-		}
+	
 	    //generate kode
 		var str = $('#inputName1').val();
 	    var res = str.substring(0, 4);
 		var randomNumber = Math.floor(Math.random() * 10000);
 		var generateKode = "P"+res+ randomNumber;
-		var trader = {
-				id :$('#idPasien1').val(), 
-				traderName :$('#inputName1').val(),
-				traderId : generateKode
+		var pasien = {
+				name :$('#inputName1').val(),
+				umur :$('#inputUmur1').val(),
+				alamat :$('#inputAlamat1').val(),
+				email :$('#inputEmail1').val(),				
+				kodePasien : generateKode
 		}	
-		console.log(trader);
+		console.log(pasien);
 		
 			$.ajax({
 			url : 'pasien/save',
 			type: 'post',
-			data: JSON.stringify(trader),
+			data: JSON.stringify(pasien),
 				contentType: 'application/json',
 			success: function(){
 					window.location="pasien"
@@ -61,7 +43,7 @@ $(document).ready(function(){
 				success: function(pasien){
 					window.location="pasien"
 				},error: function(){
-					alert('Pasien ini Telah Terdaftar');	
+					alert('gagal delete pasien');	
 				}
 			})
 		}
@@ -111,13 +93,15 @@ $(document).ready(function(){
 	}
 	//get form update data
 	function getFormModalUpdate(){
-		return pasien = {
+		
+		var pasien = {
 			 	id :$('#pasien1-id').val(), 
 				name :$('#inputName').val(),
 				umur :$('#inputUmur').val(),
 				alamat :$('#inputAlamat').val(),
 				kodePasien : $('#inputKodePasien').val()
 		}
+		return pasien;
 		
 	}
 	

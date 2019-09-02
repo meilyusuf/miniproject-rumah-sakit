@@ -61,8 +61,8 @@ public class PasienController {
 	//tampil data
 		@RequestMapping
 		public String index(Model model) {
-			List<Pasien> listTrader = pasienService.getAllPasien();
-			model.addAttribute("listTrader", listTrader);
+			List<Pasien> listPasien = pasienService.getAllPasien();
+			model.addAttribute("listPasien", listPasien);
 			return "pasien";
 		}
 	

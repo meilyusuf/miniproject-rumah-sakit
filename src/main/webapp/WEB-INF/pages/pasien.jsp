@@ -31,10 +31,11 @@
 	<h1>Input Data Pasien</h1>
 	<form>
 		<div class="form-group">
-			<input type="hidden" class="form-control" id="idPasien1"> <label>Name</label>
+			<input type="hidden" class="form-control" id="idPasien1"> 
+			<label>Name</label>
 			<input type="text" name="name" class="form-control" id="inputName1">
 		</div>
-		<!-- <div class="form-group">
+		<div class="form-group">
 			<label>Umur</label>
 			<input type="number"  class="form-control" id="inputUmur1">
 		</div>
@@ -45,7 +46,7 @@
 		 <div class="form-group">
 			<label>Alamat Email</label>
 			<input type="email" class="form-control" id="inputEmail1">
-		</div>    -->
+		</div>
 		<button type="button" class="btn btn-primary" id="submitPasien">Save</button>
 	</form>
 
@@ -61,20 +62,26 @@
 				class="table table-striped table-bordered" id="tablePasien">
 				<thead>
 					<tr class="bg-info">
-						<th>Trader ID</th>
-						<th>Trader Name</th>
-
+						<th>Kode Pasien</th>
+						<th>Nama</th>
+						<th>Umur</th>
+						<th>Alamat</th>
+						<th>Email</th>
+	
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${listTrader}" var="trader">
+					<c:forEach items="${listPasien}" var="pasien">
 						<tr>
-							<td>${trader.traderId}</td>
-							<td>${trader.traderName}</td>
-							<td><a data-id="${trader.id}"
+							<td>${pasien.kodePasien}</td>
+							<td>${pasien.name}</td>
+							<td>${pasien.umur}</td>
+							<td>${pasien.alamat}</td>
+							<td>${pasien.email}</td>							
+							<td><a data-id="${pasien.id}"
 								class="del btn btn-danger btn-sm" href="#">Delete</a> <a
-								data-id="${trader.id}" class="upd btn btn-warning btn-sm"
+								data-id="${pasien.kodePasien}" class="upd btn btn-warning btn-sm"
 								href="#">Update</a></td>
 						</tr>
 					</c:forEach>

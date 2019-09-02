@@ -8,7 +8,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.xsis.web128.dao.PasienDao;
 import com.xsis.web128.dao.RegistrasiDao;
 import com.xsis.web128.entity.Pasien;
-import com.xsis.web128.entity.Registrasi;
 
 @Transactional
 @Component
@@ -29,34 +28,27 @@ public class PasienService {
 	
 
 	public  List<Pasien> getAllPasien() {
-		// TODO Auto-generated method stub
-	/*	List<Pasien> listPasien = pasienDao.getAllPasien();
-		for (Pasien pasien : listPasien) {
-			List<Registrasi> listRegist = registrasiDao.getRegistrasiByPasien(pasien);
-			pasien.setRegistrasi(listRegist);
-		}*/
 		return pasienDao.getAllPasien();
 	}
 
 	public void delete(Pasien pasien) {
-		// TODO Auto-generated method stub
-		//.delete sudah disediakan hibernate
+		
 		pasienDao.delete(pasien);
 	}
 
 
 	public Pasien getPasienById(int id) {
-		// TODO Auto-generated method stub
+		
 		return pasienDao.getPasienById(id);
 	}
 
 	public void update(Pasien pasien) {
-		// TODO Auto-generated method stub
+		
 		 pasienDao.update(pasien);
 	}
 
 	public Pasien getPasienByKode(String kodePasien) {
-		// TODO Auto-generated method stub
+		
 		return pasienDao.getPasienByKode(kodePasien);
 	}
 
