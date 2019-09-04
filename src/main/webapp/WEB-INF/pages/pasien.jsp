@@ -66,8 +66,7 @@
 						<th>Nama</th>
 						<th>Umur</th>
 						<th>Alamat</th>
-						<th>Email</th>
-	
+						<th>Email</th>	
 						<th>Action</th>
 					</tr>
 				</thead>
@@ -81,7 +80,7 @@
 							<td>${pasien.email}</td>							
 							<td><a data-id="${pasien.id}"
 								class="del btn btn-danger btn-sm" href="#">Delete</a> <a
-								data-id="${pasien.kodePasien}" class="upd btn btn-warning btn-sm"
+								data-id="${pasien.id}" class="upd btn btn-warning btn-sm"
 								href="#">Update</a></td>
 						</tr>
 					</c:forEach>

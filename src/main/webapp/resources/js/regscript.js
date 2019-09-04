@@ -2,34 +2,15 @@ $(document).ready(function(){
 	
 	document.getElementById('inputDate').valueAsDate = new Date();
 	
-	//submit pasien
-/*	$('#pasien-submit').on('click', function(){
-		var id = $('#pasien-id').val();
-		$.ajax({
-			url: 'registrasi/getpasien/'+id,
-			success: function(pasien){
-				_setFormModalUpdate(pasien);
-			},error: function(){
-				alert('failed load data');
-			}
-		});
-		
-	});*/
 	$('#kode-submit').on('click', function(){
 		var searchKode = $('#pasien-kode').val();
-		var pasien = {
-			kodePasien : searchKode
-		}
 		if(searchKode == "") {
 			alert('mohon Isi Kode Registrasi terlebih dahulu')
 			return false;
 		}
-		console.log(pasien);
 		$.ajax({
-			url: 'registrasi/getKodePasien',
-			type: 'POST',
-			contentType: 'application/json',
-			data: JSON.stringify(pasien),
+			url: 'registrasi/getKodePasien?kodePasien='+searchKode,
+			type: 'GET',
 			success: function(data){
 				console.log(data);
 				setValuePasien(data);
@@ -40,7 +21,7 @@ $(document).ready(function(){
 		
 	});
 	//set form update data
-	function setValuePasien(pasien) {
+	function setValuePasien(data) {
 		$('#pasien-id').val(pasien.id);
 		$('#nama-pasien').val(pasien.name);
 		$('#umur-pasien').val(pasien.umur);

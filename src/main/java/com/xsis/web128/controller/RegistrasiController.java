@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
@@ -71,25 +72,14 @@ public class RegistrasiController {
 		registrasiService.saveRegist(registrasi);
 		return registrasi;
 	}
-	@RequestMapping(value="/getKodePasien", method=RequestMethod.POST)
+	@RequestMapping(value="/getKodePasien", method=RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@ResponseBody
-	public Pasien searchByName(@RequestBody Pasien pasien) {
-		String searchKode = pasien.getKodePasien();
-		Pasien pasien1 = pasienService.getPasienByKode(searchKode);
-	/*	Model model = (Model) pasien1;
-		model.addAttribute("pasien1", pasien1);*/
-		System.out.println(pasien1.getId());
-		System.out.println(pasien1.getName());
-		return pasien1;
+	public Pasien searchByName(@RequestParam String kodePasien) {
+		System.out.println(kodePasien);
+		return pasienService.getPasienByKode(kodePasien);
 	}
-/*	
-	@RequestMapping(value="/getKodeReg", method=RequestMethod.POST)
-	@ResponseBody
-	public DetailRegistrasi getKodeReg(@RequestBody DetailRegistrasi detailRegist) {
-		
-		
-	}*/
+
 	
 
 }
