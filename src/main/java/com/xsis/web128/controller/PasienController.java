@@ -35,7 +35,7 @@ public class PasienController {
 	//delete
 	@RequestMapping(value="/delete/{id}", method=RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
-	public void delete(@PathVariable Long id) {
+	public void delete(@PathVariable int id) {
 		Pasien pasien = new Pasien();
 		pasien.setId(id);
 		pasien.setName("del");
@@ -45,7 +45,7 @@ public class PasienController {
 	@ResponseBody
 	@RequestMapping(value="/get/{id}", method=RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
-	public Pasien getPasienById(@PathVariable Long id) {
+	public Pasien getPasienById(@PathVariable int id) {
 		Pasien pasien = pasienService.getPasienById(id);
 		return pasien;
 	}
